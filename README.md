@@ -1,2 +1,2 @@
 # film-wise
-A move recommendation system
+A movie recommendation system
