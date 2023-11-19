@@ -40,7 +40,7 @@ def clean_data(file_path):
     return raw_data
 
 
-def expanded_data(cleaned_data, movie_catalog_data_filepath):
+def expand_data(cleaned_data, movie_catalog_data_filepath, expanded_data_filepath):
     df1 = pd.DataFrame(cleaned_data)
     df2 = pd.read_csv(movie_catalog_data_filepath)
 
@@ -48,8 +48,16 @@ def expanded_data(cleaned_data, movie_catalog_data_filepath):
     df2['Movie'] = df2['Movie'].str.lower()  # Convert to lowercase for consistency
     df2['Movie'] = df2['Movie'].str.strip()  # Remove leading/trailing whitespaces
 
+    # For the case of Star Wars, use "Star Wars: Episode I - The Phantom Menace" - it means it has to be renamed
+    # - because it is episode 1, and is pretty similar to all other occurrences of star wars
+    df2['Movie'] = df2['Movie'].replace('star wars: episode i - the phantom menace', 'star wars')
+
+    # For the case of The Godfather, pick "The Godfather: Part III"
+    df2['Movie'] = df2['Movie'].replace('the godfather: part iii', 'the godfather')
+
     # Merge the datasets based on movie name and rating
     merged_df = pd.merge(df1, df2, on=['Movie'], how='left')
+    merged_df.to_csv(expanded_data_filepath)
 
     # Return the merged DataFrame
     return merged_df
