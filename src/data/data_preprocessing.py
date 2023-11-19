@@ -38,3 +38,18 @@ def clean_data(file_path):
     raw_data = raw_data.drop_duplicates()
 
     return raw_data
+
+
+def expanded_data(cleaned_data, movie_catalog_data_filepath):
+    df1 = pd.DataFrame(cleaned_data)
+    df2 = pd.read_csv(movie_catalog_data_filepath)
+
+    # do some cleaning on the second dataset
+    df2['Movie'] = df2['Movie'].str.lower()  # Convert to lowercase for consistency
+    df2['Movie'] = df2['Movie'].str.strip()  # Remove leading/trailing whitespaces
+
+    # Merge the datasets based on movie name and rating
+    merged_df = pd.merge(df1, df2, on=['Movie'], how='left')
+
+    # Return the merged DataFrame
+    return merged_df
