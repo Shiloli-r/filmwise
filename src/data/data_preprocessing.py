@@ -24,6 +24,7 @@ def clean_data(file_path):
     raw_data['Rating'] = pd.to_numeric(raw_data['Rating'], errors='coerce')
 
     # 3. Standardize movie names - fix typos and inconsistencies
+    raw_data['Movie'].replace({'Matrix': 'The Matrix'}, inplace=True)
     raw_data['Movie'] = raw_data['Movie'].str.lower()  # Convert to lowercase for consistency
     raw_data['Movie'] = raw_data['Movie'].str.strip()  # Remove leading/trailing whitespaces
 
