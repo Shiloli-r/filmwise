@@ -50,6 +50,35 @@ The recommendation algorithm involves a hybrid approach, combining collaborative
 
 The weights in the combination formula were adjusted based on experimentation and performance evaluation to optimize the recommendation system.
 
+## Directory Structure
+The directory structure of the project is as shown below:
+# filmwise
+
+- **data/**
+  - **raw/**
+    - raw_data.csv
+  - **cleaned/**
+    - expanded.csv
+  - **catalog/**
+    - movies.csv
+
+- **src/**
+  - \_\_init\_\_.py
+  - **data/**
+    - \_\_init\_\_.py
+    - data_analysis.py
+    - data_preprocessing.py
+  - **algorithms/**
+    - \_\_init\_\_.py
+    - hybrid_recommendation.py
+  - main.py
+
+- requirements.txt
+- README.md
+- .gitignore
+
+
+
 ## How to Run
 1. **Clone this repository** - Clone the repo and open it in the terminal.
 2. **Create a python virtual environment** - On the terminal, run `pip install virtualenv`. Then `virtualenv env` to create a virtual environment named env
