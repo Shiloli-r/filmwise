@@ -79,9 +79,10 @@ The directory structure of the project is as shown below:
 
 
 
-## How to Run
+## How to Run (Linux)
 1. **Clone this repository** - Clone the repo and open it in the terminal.
 2. **Create a python virtual environment** - On the terminal, run `pip install virtualenv`. Then `virtualenv env` to create a virtual environment named env
-3. **Activate the virtual environment** - For linux, do `source .env/bin/activate`
-4. **Install Dependencies** - install all the required dependencies. Run `pip install requirements.txt`
-5. **Run the main.py** - Run the main.py file in the src directory
+3. **Activate the virtual environment** - For linux, run `source .env/bin/activate` on terminal
+4. **Install Dependencies** - install the dependencies. Run `pip install -r requirements.txt`
+5. **Configure PythonPath in env** - Run this in the project root, i.e, in the filmwise folder `export PYTHONPATH="$PYTHONPATH:$PWD"`. Navigate to src folder (cd src), then run the same command.
+6. **Run the main.py** - Run the main.py file by running this command: `python3 main.py`
