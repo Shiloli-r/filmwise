@@ -51,6 +51,8 @@ The recommendation algorithm involves a hybrid approach, combining collaborative
 The weights in the combination formula were adjusted based on experimentation and performance evaluation to optimize the recommendation system.
 
 ## How to Run
-1. **Install Dependencies** - assumes you are running on a python virtual env. Run `pip install requirements.txt`
-2. **Run the main.py** - Run the main.py file in the src directory
-3. 
+1. **Clone this repository** - Clone the repo and open it in the terminal.
+2. **Create a python virtual environment** - On the terminal, run `pip install virtualenv`. Then `virtualenv env` to create a virtual environment named env
+3. **Activate the virtual environment** - For linux, do `source .env/bin/activate`
+4. **Install Dependencies** - install all the required dependencies. Run `pip install requirements.txt`
+5. **Run the main.py** - Run the main.py file in the src directory
