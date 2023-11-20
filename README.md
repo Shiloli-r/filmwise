@@ -52,7 +52,7 @@ The weights in the combination formula were adjusted based on experimentation an
 
 ## Directory Structure
 The directory structure of the project is as shown below:
-# filmwise
+### filmwise
 
 - **data/**
   - **raw/**
@@ -86,3 +86,14 @@ The directory structure of the project is as shown below:
 4. **Install Dependencies** - install the dependencies. Run `pip install -r requirements.txt`
 5. **Configure PythonPath in env** - Run this in the project root, i.e, in the filmwise folder `export PYTHONPATH="$PYTHONPATH:$PWD"`. Navigate to src folder (cd src), then run the same command.
 6. **Run the main.py** - Run the main.py file by running this command: `python3 main.py`
+
+CLI application
+<img src="src/imgs/filmwise_cli.png">
+<br>
+
+Expanded Data:
+<img src="src/imgs/expanded_data.png">
+<br>
+
+User preferences and Watch History:
+<img src="src/imgs/user_pref.png">
