@@ -28,6 +28,20 @@ def extract_user_preferences(cleaned_data):
     }
 
 
+def get_watch_history(cleaned_data):
+    # Display movies watched by each user
+    user_watch_history = cleaned_data.groupby('User')['Movie'].unique().reset_index()
+
+    # Display each user's most popular genre
+    user_most_popular_genre = cleaned_data.groupby(['User', 'genre'])['Movie'].count().reset_index()
+    user_most_popular_genre = user_most_popular_genre.sort_values(by='Movie', ascending=False).groupby('User').first()
+
+    # Display average ratings for each user
+    user_average_ratings = cleaned_data.groupby('User')['Rating'].mean().reset_index()
+
+    return user_watch_history, user_most_popular_genre, user_average_ratings
+
+
 def visualize_insights(avg_rating_per_user, rating_distribution, favorite_genres):
     # Visualization of insights (can be expanded based on your specific analysis)
     plt.figure(figsize=(12, 6))
